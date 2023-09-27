@@ -1,37 +1,25 @@
-'''
-Implement a function called sort_students that takes a list of student objects as input and sorts the
-list based on their CGPA (Cumulative Grade Point Average) in descending order. Each student object
-has the following attributes: name (string), roll_number (string), and cgpa (float). Test the function
-with different input lists of students.
-'''
+def LinearSearch(array, n, k):
 
-class Student:
+    for j in range(0, n):
 
-  def __init__(self, name, roll_number, cgpa):
-    self.name = name
-    self.roll_number = roll_number
-    self.cgpa = cgpa
+        if (array[j] == k):
 
+            return j
 
-def sort_students(student_list):
-  # Sort the list of students in descending order of CGPA
-  sorted_students = sorted(student_list,
-                           key=lambda student: student.cgpa,
-                           reverse=True)
-  # Syntax - lambda arg:exp
-  return sorted_students
+    return -1
 
+ 
+array = [1, 3, 5, 7, 9]
 
-# Example usage:
-students = [
-    Student("abinaya", "22ugcs01", 7.8),
-    Student("abirami", "22ugcs02", 8.9),
-    Student("janani", "cb22s614379", 9.1),
-    Student("sangavi", "cb22s614400", 9.9),
-]
+k = 7
+n = len(array)
 
-sorted_students = sort_students(students)
+result = LinearSearch(array, n, k)
 
-# Print the sorted list of students
-for student in sorted_students:
-  print(Name: {}, Roll Number: {}, CGPA: {}.format(student.name))
+if(result == -1):
+
+    print("Element not found")
+
+else:
+
+    print("Element found at index: ", result)
